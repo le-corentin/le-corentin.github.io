@@ -19,7 +19,17 @@ var measures_to_display = [0,1,2,3,7,8];
 
 var cont_width = 800;
 var MAX_TIME = 4000;
+var data_path = 'data/res.xml';
 
+
+
+var container_transf = document.getElementById("results-transf"),
+  container_noise = document.getElementById("results-noise"),
+  container_time = document.getElementById("results-time");
+  
+display_data(data_path,'transf',container_transf);
+display_data(data_path,'noise',container_noise);
+display_time(data_path,container_time);
 
 
 
@@ -49,15 +59,6 @@ function filterTestType(tests,testType)
   return out;
 }
 
-
-var container_transf = document.getElementById("results-transf"),
-  container_noise = document.getElementById("results-noise"),
-  container_time = document.getElementById("results-time");
-// display_data('/data/res_transf_10.xml','transf',container_transf);
-// display_data('/data/res_noise_10.xml','noise',container_noise);
-display_data('/data/res.xml','transf',container_transf);
-display_data('/data/res.xml','noise',container_noise);
-display_time('/data/res.xml',container_time);
 
 
 function display_data(filename, testType, container)
